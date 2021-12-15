@@ -88,7 +88,7 @@ func newHandlerContext(res http.ResponseWriter, req *http.Request, repoPath stri
 		RepoExists:     fileExists,
 		FullRepoPath:   fullRepoPath,
 		Input:          io.MultiReader(bytes.NewBuffer(refsHeader), req.Body),
-		Output:         io.MultiWriter(res, os.Stdout),
+		Output:         res,
 	}, nil
 }
 
